@@ -2,12 +2,12 @@
 
 import React, { PropTypes } from 'react';
 import ReactNative, { requireNativeComponent, View } from 'react-native';
-var PureRenderMixin = require('react-addons-pure-render-mixin');
 
 var {
-    addons: { PureRenderMixin },
     NativeModules: { UIManager, CrosswalkWebViewManager: { JSNavigationScheme } }
 } = ReactNative;
+
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 
 var resolveAssetSource = require('react-native/Libraries/Image/resolveAssetSource');
 
