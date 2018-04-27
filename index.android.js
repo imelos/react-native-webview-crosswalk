@@ -21,6 +21,7 @@ class CrosswalkWebView extends React.PureComponent {
         this.onProgress = this.onProgress.bind(this);
         this.onError = this.onError.bind(this);
         this.onMessage = this.onMessage.bind(this);
+        this.reload = this.reload.bind(this);
     }
     render() {
         var source = this.props.source || {};
