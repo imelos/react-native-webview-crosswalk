@@ -1,7 +1,9 @@
 'use strict';
 
-import React, { PropTypes } from 'react';
+import React from 'react';
 import ReactNative, { requireNativeComponent, View } from 'react-native';
+import PropTypes from 'prop-types';
+import createReactClass from 'create-react-class'
 
 var {
     NativeModules: { UIManager, CrosswalkWebViewManager: { JSNavigationScheme } }
@@ -13,7 +15,7 @@ var resolveAssetSource = require('react-native/Libraries/Image/resolveAssetSourc
 
 var WEBVIEW_REF = 'crosswalkWebView';
 
-var CrosswalkWebView = React.createClass({
+var CrosswalkWebView = createReactClass({
     mixins:    [PureRenderMixin],
     statics:   { JSNavigationScheme },
     propTypes: {
@@ -53,11 +55,11 @@ var CrosswalkWebView = React.createClass({
         });
         return (
             <NativeCrosswalkWebView
-                { ...nativeProps }
-                ref={ WEBVIEW_REF }
-                source={ resolveAssetSource(source) }
-            />
-        );
+        { ...nativeProps }
+        ref={ WEBVIEW_REF }
+        source={ resolveAssetSource(source) }
+        />
+    );
     },
     getWebViewHandle () {
         return ReactNative.findNodeHandle(this.refs[WEBVIEW_REF]);
