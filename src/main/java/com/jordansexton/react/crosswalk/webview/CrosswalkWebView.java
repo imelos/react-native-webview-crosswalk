@@ -17,6 +17,7 @@ import org.xwalk.core.XWalkNavigationHistory;
 import org.xwalk.core.XWalkResourceClient;
 import org.xwalk.core.XWalkUIClient;
 import org.xwalk.core.XWalkView;
+import org.xwalk.core.XWalkPreferences;
 
 import com.facebook.react.views.webview.events.TopMessageEvent;
 
@@ -58,6 +59,7 @@ class CrosswalkWebView extends XWalkView implements LifecycleEventListener {
 
         this.setResourceClient(resourceClient);
         this.setUIClient(uiClient);
+        XWalkPreferences.setValue(XWalkPreferences.ANIMATABLE_XWALK_VIEW , true);
     }
 
     public Boolean getLocalhost () {
