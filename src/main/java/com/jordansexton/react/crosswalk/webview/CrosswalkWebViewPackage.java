@@ -6,6 +6,7 @@ import com.facebook.react.bridge.JavaScriptModule;
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
+import org.xwalk.core.XWalkPreferences;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,6 +15,7 @@ import java.util.List;
 
 public class CrosswalkWebViewPackage implements ReactPackage {
     public CrosswalkWebViewPackage () {
+        XWalkPreferences.setValue(XWalkPreferences.ANIMATABLE_XWALK_VIEW , true);
     }
 
     @Override
